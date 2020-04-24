@@ -1,0 +1,11 @@
+{
+  "name": "ant-design-cmq",
+  "version": "0.0.1",
+  "description": "Excellent extension components based on Ant Design collected or written by ourselves.",
+  "repository": "git@github.com:chenjianhong/ant-design-cmq.git",
+  "author": "cjh <1815515831@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "antd": "^3.26.12"
+  }
+}
