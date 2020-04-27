@@ -8,3 +8,4 @@ node_modules
 # visual studio code
 .history
 *.log
+dist
