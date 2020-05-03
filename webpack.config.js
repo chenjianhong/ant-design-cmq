@@ -44,7 +44,10 @@ module.exports = {
           {
             loader: "css-loader", // translates CSS into CommonJS
             options: {
-              modules: true
+              // modules: true, // 开启css modules
+              modules: {  // 开启css modules，同时配置对应的classname生成方式，具体变量含义：https://github.com/webpack/loader-utils#interpolatename
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              },
             }
           }, 
           {
