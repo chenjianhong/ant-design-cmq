@@ -28,8 +28,9 @@ class SliderControlWithPlayer extends React.Component{
           this.setState({
             rateVal:rateVal+1,
           });
+          tickMethod(rateVal+1)
+          this.tick()
         }
-        tickMethod(rateVal+1)
       }, interval);
     };
   
@@ -53,27 +54,26 @@ class SliderControlWithPlayer extends React.Component{
     };
 
     onSliderChange = (value) => {
-      const { onSliderChange } = this.props;
+      const { onPlayerChange } = this.props;
       if (isNaN(value)) {
         return;
       }
       this.setState({
         rateVal: value,
       });
-      onSliderChange(value)
+      onPlayerChange(value)
     }
 
   render(){
     const { playIcon, rateVal } = this.state;
     const { sliderMax=0 } = this.props;
-    console.log('styles.iconScale',styles,styles.iconScale)
     return (
       <Row gutter={16} className={styles.iconScale} >
         <Col span={1}>
         <Button type="link" shape="circle" icon={playIcon} onClick={this.playControl} />
         </Col>
         <Col span={23}>
-          <Slider min={0} max={0} onChange={this.onSliderChange} value={0} />
+          <Slider min={0} max={sliderMax} onChange={this.onSliderChange} value={rateVal} />
         </Col>
       </Row>
     )
